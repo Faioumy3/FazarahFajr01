@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { User, ViewState } from './types';
 import { getCurrentUser, logout } from "./storageService";
-import Login from './components/Auth';
+import Login from './Auth';
 import UserDashboard from './components/UserDashboard';
 import AdminPanel from './components/AdminPanel';
 
