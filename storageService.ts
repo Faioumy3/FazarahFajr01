@@ -1,5 +1,5 @@
 
-import { User, UserMessage } from '../types';
+import { User, UserMessage } from './types';
 import { getCairoDate, isSameDay, isYesterday } from './timeUtils';
 import { db } from './firebase';
 import { 
