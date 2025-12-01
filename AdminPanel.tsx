@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { User } from '../types';
+import { User } from './types';
 import { 
     getAllUsersForAdmin, 
     resetUserStreakCompletely, 
     deleteMessage, 
     checkAdminPassword, 
     changeAdminPassword 
-} from '../services/storageService';
-import { getCairoDate, isSameDay } from '../services/timeUtils';
+} from './storageService';
+import { getCairoDate, isSameDay } from './timeUtils';
 
 interface Props {
   onBack: () => void;

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { User, ViewState } from './types';
-import { getCurrentUser, logout } from './services/storageService';
-import Login from './components/Auth';
-import UserDashboard from './components/UserDashboard';
-import AdminPanel from './components/AdminPanel';
+import { getCurrentUser, logout } from './storageService';
+import Login from './Auth';
+import UserDashboard from './UserDashboard';
+import AdminPanel from './AdminPanel';
 
 const App: React.FC = () => {
   const [view, setView] = useState<ViewState>(ViewState.LOGIN);

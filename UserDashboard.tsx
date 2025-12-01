@@ -1,8 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
-import { User, AttendanceRecord } from '../types';
-import { getFajrStatus, getHijriDateString, getGregorianDateString, getCairoDate, isSameDay } from '../services/timeUtils';
-import { checkInUser, claimReward, sendMessageToAdmin, changeUserPassword } from '../services/storageService';
+import { User, AttendanceRecord } from './types';
+import { getFajrStatus, getHijriDateString, getGregorianDateString, getCairoDate, isSameDay } from './timeUtils';
+import { checkInUser, claimReward, sendMessageToAdmin, changeUserPassword } from './storageService';
 import { GoogleGenAI } from "@google/genai";
 
 interface Props {
