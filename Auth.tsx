@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { User, ViewState } from '../types';
+import { User } from './types';
 import { loginUser, registerUser } from './storageService';
 
 interface Props {
@@ -10,7 +10,7 @@ interface Props {
 const Auth: React.FC<Props> = ({ onLoginSuccess, onAdminClick }) => {
   const [isRegistering, setIsRegistering] = useState(false);
   const [loading, setLoading] = useState(false);
-  
+
   // Form States
   const [fullName, setFullName] = useState('');
   const [phone, setPhone] = useState('');
@@ -69,13 +69,13 @@ const Auth: React.FC<Props> = ({ onLoginSuccess, onAdminClick }) => {
           <h2 className="block mt-1 text-lg leading-tight font-medium text-black">
             ربنا يوفقك في رحلة الفجر يا عزيزي
           </h2>
-          
+
           <form onSubmit={handleSubmit} className="mt-6 grid grid-cols-1 gap-y-4">
             {isRegistering && (
               <div>
                 <label className="block text-gray-700 font-bold mb-2 text-sm">الاسم رباعي</label>
-                <input 
-                  type="text" 
+                <input
+                  type="text"
                   value={fullName}
                   onChange={e => setFullName(e.target.value)}
                   className="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-islamic-accent focus:ring-1 focus:ring-islamic-accent"
@@ -87,8 +87,8 @@ const Auth: React.FC<Props> = ({ onLoginSuccess, onAdminClick }) => {
 
             <div>
               <label className="block text-gray-700 font-bold mb-2 text-sm">رقم الهاتف</label>
-              <input 
-                type="tel" 
+              <input
+                type="tel"
                 value={phone}
                 onChange={e => setPhone(e.target.value)}
                 className="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-islamic-accent focus:ring-1 focus:ring-islamic-accent"
@@ -99,8 +99,8 @@ const Auth: React.FC<Props> = ({ onLoginSuccess, onAdminClick }) => {
 
             <div>
               <label className="block text-gray-700 font-bold mb-2 text-sm">كلمة السر</label>
-              <input 
-                type="password" 
+              <input
+                type="password"
                 value={password}
                 onChange={e => setPassword(e.target.value)}
                 className="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-islamic-accent focus:ring-1 focus:ring-islamic-accent"
@@ -111,8 +111,8 @@ const Auth: React.FC<Props> = ({ onLoginSuccess, onAdminClick }) => {
             {isRegistering && (
               <div>
                 <label className="block text-gray-700 font-bold mb-2 text-sm">تأكيد كلمة السر</label>
-                <input 
-                  type="password" 
+                <input
+                  type="password"
                   value={confirmPass}
                   onChange={e => setConfirmPass(e.target.value)}
                   className="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-islamic-accent focus:ring-1 focus:ring-islamic-accent"
@@ -123,33 +123,37 @@ const Auth: React.FC<Props> = ({ onLoginSuccess, onAdminClick }) => {
 
             {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
 
-            <button 
-                type="submit" 
-                disabled={loading}
-                className={`bg-islamic-dark text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-lg mt-2 ${loading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-teal-900'}`}
+            <button
+              type="submit"
+              disabled={loading}
+              className={`bg-islamic-dark text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-lg mt-2 ${
+                loading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-teal-900'
+              }`}
             >
-              {loading ? 'جاري التحميل...' : (isRegistering ? 'إنشاء حساب' : 'دخول')}
+              {loading ? 'جاري التحميل...' : isRegistering ? 'إنشاء حساب' : 'دخول'}
             </button>
           </form>
 
           <div className="mt-6 text-center border-t pt-4">
-            <button 
-              onClick={() => { setIsRegistering(!isRegistering); setError(''); }} 
+            <button
+              onClick={() => {
+                setIsRegistering(!isRegistering);
+                setError('');
+              }}
               className="text-islamic-dark hover:underline text-sm font-semibold"
             >
               {isRegistering ? 'لديك حساب بالفعل؟ سجل دخول' : 'ليس لديك حساب؟ اشترك الآن'}
             </button>
           </div>
 
-           <div className="mt-8 text-center">
-            <button 
-              onClick={onAdminClick} 
+          <div className="mt-8 text-center">
+            <button
+              onClick={onAdminClick}
               className="text-gray-400 hover:text-gray-600 text-xs"
             >
               دخول المشرفين
             </button>
           </div>
-
         </div>
       </div>
     </div>
