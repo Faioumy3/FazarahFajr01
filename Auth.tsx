@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { User, ViewState } from '../types';
-import { loginUser, registerUser } from '../services/storageService';
+import { loginUser, registerUser } from './storageService';
 
 interface Props {
   onLoginSuccess: (user: User) => void;
