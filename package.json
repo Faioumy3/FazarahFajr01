@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://faioumy3.github.io/FazarahFajr01/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
