@@ -1,12 +1,17 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>فجر فزارة المشرق</title>
+
+    <!-- Tailwind عبر CDN (ينفع للإنتاج لكن يفضّل لاحقًا الانتقال لـ PostCSS) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700&family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700&family=Aref+Ruqaa:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
     <script>
       tailwind.config = {
         theme: {
@@ -21,13 +26,14 @@
                 dark: '#0f3d3e',
                 light: '#e2f1f1',
                 gold: '#d4af37',
-                accent: '#10b981'
-              }
-            }
-          }
-        }
-      }
+                accent: '#10b981',
+              },
+            },
+          },
+        },
+      };
     </script>
+
     <style>
       body {
         background-color: #f3f4f6;
@@ -36,23 +42,26 @@
         font-family: 'Aref Ruqaa', serif;
       }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
-    "firebase/app": "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js",
-    "firebase/firestore": "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js",
-    "firebase/": "https://aistudiocdn.com/firebase@^12.6.0/"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
-</head>
+
+    <!-- Import map كما هو (يُستخدم أثناء التطوير) -->
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "https://aistudiocdn.com/react@^19.2.0",
+          "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+          "react/": "https://aistudiocdn.com/react@^19.2.0/",
+          "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+          "firebase/app": "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js",
+          "firebase/firestore": "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js",
+          "firebase/": "https://aistudiocdn.com/firebase@^12.6.0/"
+        }
+      }
+    </script>
+  </head>
   <body>
     <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
-</body>
+
+    <!-- هنا المهم: نستدعي نقطة دخول Vite (سيتم استبدالها بملفات build داخل dist) -->
+    <script type="module" src="/index.tsx"></script>
+  </body>
 </html>
